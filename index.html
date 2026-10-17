@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="id">
+<head> <link rel="preconnect" href="https://lh3.googleusercontent.com">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Portal BK MANDUPA - MAN 2 Kota Padang</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.4.21/vue.global.prod.min.js"></script>
+<script>window.addEventListener('error', function (e) { var el = document.getElementById('bootErr'); if (el) el.textContent = ' (' + (e.message || 'galat tidak diketahui') + ')'; });
+window.addEventListener('DOMContentLoaded', function () { if (window.Vue) return; var el = document.getElementById('bootErr'); if (el) el.textContent = ' Pustaka Vue gagal dimuat. Periksa koneksi internet atau pemblokiran cdnjs.cloudflare.com, lalu muat ulang.'; });</script>
+<meta name="theme-color" content="#1a56a6">
+<link rel="preload" href="/data.json" as="fetch" crossorigin>
+<link rel="preconnect" href="https://script.google.com">
+<style>
+[v-cloak]{display:none!important}
+#boot{min-height:100vh}.sk-note{text-align:center;color:#64748b;font:13px system-ui,sans-serif;margin:14px 0}
+:root{--g1:#0b2a52;--g2:#1a56a6;--g3:#2e7d32;--gold:#c9a227;--bg:#f1f5fa;--ink:#1f2937;--mut:#64748b;--line:#dfe6f1}
+*{box-sizing:border-box}html,body{margin:0}
+body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;color:var(--ink);line-height:1.5;background:var(--bg) radial-gradient(circle at 1px 1px,#d3deee 1px,transparent 0) 0 0/22px 22px}
+button{font:inherit;cursor:pointer;border:0}
+.wrap{max-width:1180px;margin:0 auto;padding:0 18px}
+.util{background:var(--g1);color:#c9daf2;font-size:11.5px}.util .wrap{display:flex;justify-content:space-between;gap:10px;padding:6px 18px}
+.head{background:#fff;border-bottom:1px solid var(--line)}.head .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 18px}
+.brand{display:flex;align-items:center;gap:12px;cursor:pointer}.brand img{height:50px}.brand b{display:block;font-size:18px;color:var(--g2);font-weight:800;line-height:1.2}.brand small{color:var(--mut);font-size:11.5px}
+.topfix{position:sticky;top:0;z-index:50;box-shadow:0 4px 14px rgba(8,25,55,.2)}.nav{background:var(--g2)}
+.brand img{transition:height .2s}.topfix.sc .head .wrap{padding:6px 18px}.topfix.sc .brand img{height:34px}.topfix.sc .brand small{display:none}.nav .wrap{display:flex;gap:2px;overflow-x:auto;scrollbar-width:none}
+.nav button{background:none;color:#e4eefc;padding:13px 15px;font-size:13px;font-weight:700;white-space:nowrap;border-bottom:3px solid transparent}
+.nav button:hover{background:rgba(255,255,255,.1)}.nav button.on{background:rgba(0,0,0,.2);border-color:var(--gold);color:#fff}
+.hero{background:linear-gradient(120deg,#0b2a52,#1a56a6 70%,#2e7d32);color:#fff;position:relative;overflow:hidden}
+.hero:before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 88% 15%,rgba(201,162,39,.28),transparent 42%),radial-gradient(circle at 8% 95%,rgba(255,255,255,.09),transparent 38%)}
+.hero .wrap{position:relative;display:grid;grid-template-columns:1.4fr 1fr;gap:30px;padding:48px 18px 70px;align-items:center}
+.hero h1{font-size:clamp(25px,4vw,40px);line-height:1.15;margin:10px 0 12px;font-weight:800}.hero p{color:#d6e3f5;max-width:540px;margin:0 0 22px;font-size:14.5px}
+.tag{display:inline-block;background:rgba(201,162,39,.2);color:#f3dd8a;border:1px solid rgba(201,162,39,.5);padding:3px 12px;border-radius:99px;font-size:11.5px;font-weight:700;letter-spacing:.05em}
+.btn{display:inline-block;padding:11px 20px;border-radius:10px;font-weight:700;font-size:13px;margin:0 8px 8px 0}.btn.gold{background:var(--gold);color:#1a1a1a}.btn.line{background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.35)}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.stat{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:14px;padding:16px 8px;text-align:center}.stat b{display:block;font-size:28px}.stat span{font-size:11.5px;color:#c9daf2}
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:14px;margin-top:24px;position:relative;z-index:5}
+.tile{background:#fff;border-radius:14px;padding:18px 12px;text-align:center;border:1px solid var(--line);box-shadow:0 10px 24px -14px rgba(10,61,44,.45);transition:.2s;font-weight:700;font-size:13px;color:var(--g1)}
+.tile:hover{transform:translateY(-4px);border-color:var(--g3)}.tile i{display:block;font-style:normal;font-size:28px;margin-bottom:6px}
+.sec{padding:34px 0 6px}.sec h2{margin:0 0 4px;font-size:22px;color:var(--g1);font-weight:800}.sub{color:var(--mut);font-size:13px;margin:0 0 18px}
+.h2l{display:flex;align-items:end;justify-content:space-between;gap:10px}.h2l a{font-size:12.5px;font-weight:700;color:var(--g3);cursor:pointer;white-space:nowrap}
+.card{background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:0 8px 20px -14px rgba(0,0,0,.3);padding:22px;margin-bottom:18px}
+.news{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:16px}
+.nc{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;cursor:pointer;transition:.2s;display:flex;flex-direction:column;box-shadow:0 8px 20px -14px rgba(0,0,0,.3)}.nc:hover{transform:translateY(-3px)}
+.nc img{width:100%;height:150px;object-fit:cover;background:#dde7f4}.nc.big{grid-row:span 2}.nc.big img{height:270px}
+.nc .b{padding:14px}.nc h3{margin:6px 0;font-size:15px;line-height:1.35}.nc p{margin:0;font-size:12.5px;color:var(--mut);display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}.nc small{color:var(--mut);font-size:11px}
+.chip{display:inline-block;background:#e3eefc;color:var(--g2);padding:2px 9px;border-radius:6px;font-size:10px;font-weight:800;text-transform:uppercase}
+.mods{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:22px 16px}.mc{cursor:pointer}
+.cv{position:relative;aspect-ratio:3/4;border-radius:3px 10px 10px 3px;overflow:hidden;background:linear-gradient(135deg,#1a56a6,#0b2a52);box-shadow:0 12px 22px -10px rgba(0,0,0,.55);transition:.25s}.mc:hover .cv{transform:translateY(-6px)}
+.cv img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.cv:after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.4),transparent 9%)}
+.cv .k{position:absolute;left:10px;top:8px;z-index:2;background:rgba(10,25,18,.8);color:#fff;font-size:9px;font-weight:800;padding:2px 7px;border-radius:5px;text-transform:uppercase;max-width:80%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.cv .x{position:absolute;right:6px;top:6px;z-index:3;background:#dc2626;color:#fff;border-radius:7px;width:26px;height:26px}
+.mc h4{margin:9px 0 2px;font-size:13px;line-height:1.3}.mc small{color:var(--mut);font-size:11.5px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}.chips button{background:#fff;border:1px solid var(--line);padding:6px 13px;border-radius:99px;font-size:12px;font-weight:700;color:var(--mut)}.chips button.on{background:var(--g2);color:#fff;border-color:var(--g2)}
+.fm label{display:block;font-size:11px;font-weight:700;color:var(--mut);text-transform:uppercase;margin:10px 0 4px}
+.fm input,.fm select,.fm textarea{width:100%;padding:10px 12px;border:1px solid #c6d3e6;border-radius:9px;font:inherit;font-size:14px;background:#fff;color:var(--ink)}
+.pbtn{background:var(--g2);color:#fff;padding:11px 20px;border-radius:9px;font-weight:700;font-size:13px}.pbtn:disabled{opacity:.5;cursor:default}.pbtn.sm{padding:8px 14px}
+.g2{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}.tw{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:13px;min-width:560px}th{background:#eaf1fb;text-align:left;padding:10px;color:var(--g1)}td{padding:10px;border-top:1px solid var(--line)}
+.sh{margin:20px 0 0;font-size:14px;color:var(--g2)}.req,.opt{font-size:10px;padding:1px 8px;border-radius:99px;margin-left:6px;font-weight:700}.req{background:#fee2e2;color:#b91c1c}.opt{background:#e0f2fe;color:#075985}
+.stat2{background:#eef4fc;border:1px solid var(--line);border-radius:12px;padding:14px;text-align:center}.stat2 b{display:block;font-size:26px;color:var(--g2)}.stat2 span{font-size:11.5px;color:var(--mut)}
+.pill{padding:2px 10px;border-radius:99px;font-weight:700;font-size:11.5px;color:#fff}
+.gur{display:flex;align-items:center;gap:14px;background:#f6f9fe;border:1px solid var(--line);border-radius:12px;padding:14px}.gur img{width:64px;height:64px;border-radius:50%;object-fit:cover;border:2px solid var(--g2);background:#dde7f4}
+.foot{background:var(--g1);color:#b8c9e4;margin-top:36px;font-size:13px}.foot .wrap{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:24px;padding:34px 18px}.foot h5{color:#fff;margin:0 0 8px;font-size:14px}.foot a{display:block;margin:4px 0;cursor:pointer}.foot .cp{border-top:1px solid rgba(255,255,255,.12);text-align:center;padding:12px;font-size:11.5px}
+.modal{position:fixed;inset:0;background:rgba(10,20,15,.6);z-index:80;display:flex;align-items:center;justify-content:center;padding:16px}.mbox{background:#fff;border-radius:16px;max-width:560px;width:100%;max-height:90vh;overflow:auto;padding:22px}
+.toast{position:fixed;top:70px;right:14px;z-index:99;background:var(--g1);color:#fff;padding:10px 16px;border-radius:10px;font-size:12.5px;font-weight:600;box-shadow:0 8px 24px rgba(0,0,0,.3);max-width:300px}
+.admin{position:fixed;top:0;right:0;bottom:0;width:min(420px,100%);background:#0d1b33;color:#e4edfb;z-index:70;padding:18px;overflow:auto;font-size:13px}.admin .box{background:#12284a;border:1px solid #27456f;border-radius:12px;padding:14px;margin-bottom:14px}.admin input,.admin select,.admin textarea{background:#0d1b33;border-color:#365a8c;color:#fff}.admin label{color:#9db8e0}.admin h4{margin:0 0 6px;color:#9ec5ff}
+.slider{position:relative;height:clamp(300px,46vw,470px);background:linear-gradient(120deg,#0b2a52,#1a56a6 70%,#2e7d32);overflow:hidden;color:#fff}
+.slide{position:absolute;inset:0;opacity:0;transition:opacity .8s;pointer-events:none}.slide.on{opacity:1;pointer-events:auto}
+.slide>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.slide .ov{position:absolute;inset:0;background:linear-gradient(90deg,rgba(6,22,48,.9),rgba(6,22,48,.4) 62%,rgba(6,22,48,.1)),linear-gradient(0deg,rgba(6,22,48,.55),transparent 45%)}
+.slide .tx{position:relative;height:100%;display:flex;flex-direction:column;justify-content:center;max-width:620px;padding-bottom:30px}
+.slide h2{font-size:clamp(22px,3.8vw,40px);line-height:1.18;margin:12px 0;font-weight:800}.slide p{color:#d6e3f5;font-size:14.5px;margin:0 0 20px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.sl-a{position:absolute;top:50%;transform:translateY(-50%);z-index:4;width:42px;height:42px;border-radius:50%;background:rgba(255,255,255,.18);color:#fff;font-size:24px}.sl-a:hover{background:rgba(255,255,255,.32)}.sl-a.l{left:12px}.sl-a.r{right:12px}
+.sl-d{position:absolute;left:0;right:0;bottom:16px;z-index:4;display:flex;justify-content:center;gap:8px}.sl-d button{width:26px;height:5px;border-radius:9px;background:rgba(255,255,255,.4)}.sl-d button.on{background:var(--gold);width:40px}
+.phero{background:linear-gradient(120deg,#0b2a52,#1a56a6 75%,#2e7d32);color:#fff;padding:28px 0 30px;position:relative;overflow:hidden}.phero:before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 90% 0,rgba(201,162,39,.25),transparent 45%)}.phero .wrap{position:relative}
+.crumb{font-size:12px;color:#c9daf2}.crumb a{cursor:pointer;color:#fff;text-decoration:underline}.phero h1{margin:6px 0 2px;font-size:clamp(22px,3.4vw,32px);font-weight:800}.phero p{margin:0;color:#c9daf2;font-size:13.5px}
+.news{grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}
+.art-grid{display:grid;grid-template-columns:1fr 300px;gap:22px;align-items:start}.art h1{font-size:clamp(22px,3vw,30px);line-height:1.25;margin:10px 0 6px;color:var(--g1)}.art .meta{color:var(--mut);font-size:12.5px;margin-bottom:14px}
+.art .cover{width:100%;border-radius:12px;margin-bottom:16px;max-height:460px;object-fit:cover}.art .body{white-space:pre-line;font-size:15.5px;line-height:1.85;color:#243040}.art .acts{margin-top:22px;padding-top:16px;border-top:1px solid var(--line)}
+.rel{display:flex;gap:10px;padding:10px 0;border-top:1px solid var(--line);cursor:pointer;font-size:13px;font-weight:700;color:var(--g1)}.rel img{width:64px;height:48px;object-fit:cover;border-radius:6px;background:#dde7f4;flex-shrink:0}.rel small{display:block;font-weight:500;color:var(--mut);font-size:11px}
+.embed .topfix,.embed .util,.embed .head,.embed .nav,.embed .phero,.embed .foot,.embed .slider,.embed .wrap{display:none!important}
+.eload{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:#070b10;color:#cbd5e1;font-size:13px;z-index:85}.embed .eload{display:flex}
+.modal.top{z-index:120}
+/* viewer */
+.viewer{position:fixed;inset:0;z-index:90;background:#070b10;color:#fff;display:flex;flex-direction:column}
+.vbar{overflow-x:auto;scrollbar-width:none;display:flex;align-items:center;gap:8px;padding:6px 10px;background:#0f172a;border-bottom:1px solid #1e293b;font-size:12px;flex-shrink:0}.vbar>*{flex-shrink:0}.vbar h3{flex-shrink:1;min-width:60px;margin:0;font-size:14px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;flex:1}
+.vbar button{background:#1e293b;color:#fff;padding:6px 11px;border-radius:8px;font-weight:700;font-size:12px}.vbar a.lnk{background:#1e293b;color:#fff;padding:6px 11px;border-radius:8px;font-weight:700;font-size:12px;text-decoration:none}.vbar button:hover{background:#334155}.vbar button:disabled{opacity:.3}
+.vstage{flex:1;position:relative;overflow:hidden}.vwrap{position:absolute;left:50%;top:50%}
+.vnav{position:absolute;top:50%;transform:translateY(-50%);z-index:5;width:38px;height:58px;border-radius:12px;background:rgba(15,23,42,.92);color:#fff;font-size:26px;border:1px solid #334155}.vnav:disabled{opacity:.2}.vnav.l{left:6px}.vnav.r{right:6px}
+.vdraw{position:absolute;top:0;left:0;right:0;z-index:7;background:rgba(15,23,42,.97);border-bottom:1px solid #334155;padding:12px;max-height:56%;overflow:auto;display:grid;grid-template-columns:repeat(auto-fill,minmax(78px,1fr));gap:10px}.vdraw button{background:#1e293b;border:2px solid transparent;border-radius:8px;padding:4px;color:#cbd5e1;font-size:11px}.vdraw button.on{border-color:var(--gold)}.vdraw img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:4px;display:block}
+.pgn{position:absolute;bottom:4px;left:50%;transform:translateX(-50%);padding:0 7px;font:700 9px/15px monospace;color:#475569;background:rgba(255,255,255,.82);border-radius:99px;pointer-events:none}
+.vload{position:absolute;left:0;right:0;bottom:22px;text-align:center;z-index:6;pointer-events:none}.vload span{background:rgba(15,23,42,.92);padding:8px 16px;border-radius:99px;font-size:12px}
+.book{position:relative;perspective:2600px;transform-style:preserve-3d}.half{position:absolute;top:0;overflow:hidden;background:#fff;cursor:pointer;box-shadow:0 14px 36px rgba(0,0,0,.55)}
+.fold{position:absolute;top:0;bottom:0;width:28px;margin-left:-14px;z-index:20;pointer-events:none;background:linear-gradient(90deg,transparent,rgba(0,0,0,.25) 50%,transparent)}
+.pg{position:relative;width:100%;height:100%;background:#fff}.pg img{display:block;width:100%;height:100%;object-fit:contain}.pg.cov img{object-fit:cover}
+.pgc{position:absolute;left:0;right:0;bottom:0;padding:80px 24px 30px;background:linear-gradient(transparent,rgba(0,0,0,.88));color:#fff}.pgc small{font-size:9px;letter-spacing:.15em;opacity:.8}.pgc b{display:block;font-size:20px;line-height:1.25;margin-top:5px}
+.leaf{position:absolute;top:0;z-index:30;pointer-events:none;transform-style:preserve-3d;will-change:transform;animation:lf .9s cubic-bezier(.5,.05,.25,1) forwards}
+.leaf-right{transform-origin:left center}.leaf-left{transform-origin:right center}.leaf-full{left:0;transform-origin:left center}
+.face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;overflow:hidden;background:#fff}.face.bk{transform:rotateY(180deg)}
+@keyframes lf{from{transform:rotateY(var(--from))}to{transform:rotateY(var(--to))}}
+@media(max-width:820px){.hero .wrap,.news,.foot .wrap{grid-template-columns:1fr}.art-grid{grid-template-columns:1fr}.nc.big{grid-row:auto}.nc.big img{height:190px}.hero .wrap{padding:34px 18px 64px}.util span:last-child{display:none}}
+/* ===== Slider berita: carousel dengan intipan kiri-kanan ===== */
+.slider{--sw:78%;--so:11%;height:auto;background:linear-gradient(120deg,#0b2a52,#1a56a6 70%,#2e7d32);padding:18px 0 38px;overflow:hidden}
+.sl-view{overflow:hidden}
+.sl-track{display:flex;gap:14px;transition:transform .6s cubic-bezier(.5,.05,.25,1)}
+.slide{position:relative;inset:auto;flex:0 0 var(--sw);height:clamp(190px,26vw,290px);border-radius:16px;overflow:hidden;opacity:.45;transform:scale(.94);transition:opacity .6s,transform .6s;pointer-events:auto;cursor:pointer;background:linear-gradient(120deg,#0b2a52,#1a56a6 70%,#2e7d32)}
+.slide.on{opacity:1;transform:none;cursor:default}
+.slide .tx{position:relative;height:100%;max-width:560px;padding:0 28px 8px;display:flex;flex-direction:column;justify-content:center}
+.slide h2{font-size:clamp(17px,2.6vw,28px);margin:8px 0}
+.slide p{font-size:13px;margin:0 0 12px;-webkit-line-clamp:2}
+.slide .btn{padding:8px 16px;margin:0}
+.sl-a{width:36px;height:36px;font-size:20px;top:calc(50% - 10px)}
+.sl-d{bottom:12px}
+@media(max-width:820px){.slider{--sw:88%;--so:6%}.slide .tx{padding:0 18px 4px}.sl-a{display:none}}
+
+/* ===== Header satu baris ===== */
+.head .bar{display:flex;align-items:center;gap:14px;padding:8px 18px}
+.brand img{height:40px}.topfix.sc .brand img{height:32px}
+.brand b{font-size:17px;white-space:nowrap;margin:0}
+.head .nav{background:none;flex:1;min-width:0;display:flex;gap:2px;overflow-x:auto;scrollbar-width:none}
+.head .nav button{background:none;color:var(--g1);padding:9px 12px;font-size:13px;font-weight:700;white-space:nowrap;border-radius:8px;border-bottom:0}
+.head .nav button:hover{background:#eaf1fb}
+.head .nav button.on{background:var(--g2);color:#fff}
+@media(max-width:820px){.head .bar{flex-wrap:wrap;gap:6px}.head .nav{order:3;flex-basis:100%}}
+
+/* ===== Header Profil dengan foto tim ===== */
+.phero.foto{min-height:300px;padding:70px 0 26px;display:flex;align-items:flex-end;background:linear-gradient(0deg,rgba(6,22,48,.9),rgba(6,22,48,.35) 55%,rgba(6,22,48,.05)),url('https://lh3.googleusercontent.com/d/1Ctv8BHjaydjkB0PZqnVPTE1h82GPYrRp=w1600') center 60%/cover no-repeat #0b2a52}
+.phero.foto:before{display:none}
+.phero.foto .wrap{width:100%}
+@media(max-width:820px){.phero.foto{min-height:230px;padding-top:50px;background-position:center 58%}}
+
+/* ===== Tombol Instagram ===== */
+.ig{display:inline-flex;align-items:center;gap:10px;padding:10px 18px;border-radius:10px;color:#fff;font-weight:700;font-size:13.5px;text-decoration:none;background:linear-gradient(45deg,#f09433,#dc2743 50%,#bc1888)}
+.ig svg{width:20px;height:20px;flex-shrink:0}
+.ig:hover{filter:brightness(1.08)}
+.foot a.igf{display:inline-flex;align-items:center;gap:8px;color:#fff;font-weight:700}
+.foot a.igf svg{width:18px;height:18px}
+
+/* ===== Kerangka pemuatan (skeleton) ===== */
+.sk{background:linear-gradient(90deg,#e3ebf6 25%,#f2f6fc 37%,#e3ebf6 63%);background-size:400% 100%;animation:skm 1.3s ease infinite}
+.slide.sk{background:linear-gradient(90deg,#e3ebf6 25%,#f2f6fc 37%,#e3ebf6 63%);background-size:400% 100%;opacity:1}
+@keyframes skm{0%{background-position:100% 50%}100%{background-position:0 50%}}
+.sk-pill{display:inline-block;height:30px;width:84px;border-radius:8px;margin:0 4px}
+.sk-hero{height:clamp(190px,26vw,290px);border-radius:16px;margin:18px 0}
+.sk-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px}.sk-card{height:230px;border-radius:14px}
+</style>
+</head>
+<body>
+<div id="boot">
+  <div class="util"><div class="wrap"><span>Kementerian Agama Republik Indonesia</span><span>Bimbingan dan Konseling • MAN 2 Kota Padang</span></div></div>
+  <header class="head"><div class="wrap bar"><div class="brand"><img src="https://lh3.googleusercontent.com/d/1QzTqks3VPlvoNY9yoTajnvhrvhdnIDpC=w160" alt=""><b>BK MANDUPA</b></div>
+    <div class="nav"><span class="sk sk-pill"></span><span class="sk sk-pill"></span><span class="sk sk-pill"></span><span class="sk sk-pill"></span><span class="sk sk-pill"></span></div></div></header>
+  <div class="wrap"><div class="sk sk-hero"></div><div class="sk-grid"><div class="sk sk-card"></div><div class="sk sk-card"></div><div class="sk sk-card"></div></div>
+  <p class="sk-note">Memuat portal… <span id="bootErr"></span></p></div>
+</div>
+<div id="app" v-cloak>
+<div v-if="toast" class="toast">{{ toast }}</div>
+
+<div class="util"><div class="wrap"><span>Kementerian Agama Republik Indonesia</span><span>Bimbingan dan Konseling • MAN 2 Kota Padang</span></div></div>
+<div class="topfix" :class="{sc: scrolled}">
+<header class="head"><div class="wrap bar">
+  <div class="brand" @click="go('beranda')"><img src="https://lh3.googleusercontent.com/d/1QzTqks3VPlvoNY9yoTajnvhrvhdnIDpC=w160" alt="Logo MAN 2 Padang"><img :src="logoK" alt="Logo Konselor"><b>BK MANDUPA</b></div>
+  <nav class="nav"><button v-for="t in menu" :key="t[0]" :class="{on: route.name === t[0]}" @click="go(t[0])">{{ t[1] }}</button></nav>
+  <div style="flex-shrink:0">
+    <button v-if="!admin" class="pbtn sm" @click="loginOpen = true">🔑 Login</button>
+    <template v-else><button class="pbtn sm" @click="panel = true">🛠 Panel</button> <button class="pbtn sm" style="background:#b91c1c" @click="logout">Keluar</button></template>
+  </div>
+</div></header>
+</div>
+
+<section v-if="route.name !== 'beranda'" class="phero" :class="{foto: route.name === 'profil'}"><div class="wrap">
+  <div class="crumb"><a @click="go('beranda')">Beranda</a> › <template v-if="route.name === 'berita' && route.id"><a @click="go('berita')">Berita</a> › Baca Selengkapnya</template><template v-else>{{ pageInfo[0] }}</template></div>
+  <h1>{{ pageInfo[0] }}</h1><p>{{ pageInfo[1] }}</p></div></section>
+
+<!-- ============ BERANDA ============ -->
+<template v-if="route.name === 'beranda'">
+<section class="slider" @mouseenter="hoverSlide = true" @mouseleave="hoverSlide = false">
+  <div class="sl-view">
+    <div v-if="slides.length" class="sl-track" :style="{transform: 'translateX(calc(var(--so) - ' + slideI + ' * (var(--sw) + 14px)))'}">
+      <div v-for="(b, i) in slides" :key="b.id" class="slide" :class="{on: i === slideI}" @click="i !== slideI && (slideI = i)">
+        <img v-if="b.gambar" :src="b.gambar" :loading="i ? 'lazy' : 'eager'" alt=""><div class="ov"></div>
+        <div class="tx"><span class="tag">{{ b.kategori }}</span><h2>{{ b.judul }}</h2><p>{{ b.ringkas }}</p><div><a class="btn gold" @click.stop="go('berita', b.id)">Baca selengkapnya →</a></div></div>
+      </div>
+    </div>
+    <div v-else-if="loading" class="sl-track" style="transform:translateX(var(--so))"><div class="slide on sk"></div></div>
+    <div v-else class="sl-track" style="transform:translateX(var(--so))">
+      <div class="slide on"><div class="tx"><span class="tag">LAYANAN TERPADU PESERTA DIDIK</span><h2>Portal Bimbingan &amp; Konseling MAN 2 Kota Padang</h2><p>Pusat informasi karier dan studi lanjut, modul bacaan digital, pemetaan peluang SNBP, serta ruang konseling yang aman dan rahasia.</p><div><a class="btn gold" @click="go('modul')">📚 Baca Modul</a> <a class="btn line" @click="go('konseling')">💬 Konsultasi</a></div></div></div>
+    </div>
+  </div>
+  <template v-if="slides.length > 1">
+    <button class="sl-a l" @click="slideI = (slideI + slides.length - 1) % slides.length">‹</button>
+    <button class="sl-a r" @click="slideI = (slideI + 1) % slides.length">›</button>
+    <div class="sl-d"><button v-for="(b, i) in slides" :key="'d' + b.id" :class="{on: i === slideI}" @click="slideI = i"></button></div>
+  </template>
+</section>
+
+<div class="wrap">
+  <div class="tiles"><a class="tile" v-for="t in tiles" :key="t[0]" @click="go(t[0])"><i>{{ t[2] }}</i>{{ t[1] }}</a></div>
+
+  <section class="sec">
+    <div class="h2l"><div><h2>Berita &amp; Kegiatan Terbaru</h2><p class="sub">Informasi terbaru dari tim Bimbingan dan Konseling</p></div><a @click="go('berita')">Lihat semua →</a></div>
+    <div v-if="loading && !berita.length" class="news"><div v-for="n in 3" :key="n" class="nc sk" style="height:260px"></div></div>
+    <div v-else-if="!berita.length" class="card" style="color:var(--mut);text-align:center">Belum ada berita atau informasi terbaru.</div>
+    <div v-else class="news"><article v-for="b in berita.slice(0, 6)" :key="b.id" class="nc" @click="go('berita', b.id)">
+      <img v-if="b.gambar" :src="b.gambar" loading="lazy" alt=""><div class="b"><span class="chip">{{ b.kategori }}</span><h3>{{ b.judul }}</h3><p>{{ b.ringkas }}</p><small>📅 {{ b.tanggal }} • Baca selengkapnya →</small></div></article></div>
+  </section>
+
+  <section class="sec">
+    <div class="h2l"><div><h2>Modul &amp; Bacaan Terbaru</h2><p class="sub">Klik sampul untuk membuka booklet interaktif</p></div><a @click="go('modul')">Lihat semua →</a></div>
+    <div v-if="loading && !modul.length" class="mods"><div v-for="n in 6" :key="n" class="mc"><div class="cv sk"></div></div></div>
+    <div class="mods"><div class="mc" v-for="m in modul.slice(0, 6)" :key="m.id" @click="go('modul', m.id)"><div class="cv"><img v-if="m.cover" :src="m.cover" loading="lazy" alt=""><span class="k">{{ m.kategori }}</span></div><h4>{{ m.judul }}</h4><small>{{ m.penulis }}</small></div></div>
+  </section>
+
+  <section class="sec" v-if="populer.length">
+    <div class="h2l"><div><h2>Paling Banyak Dibaca</h2><p class="sub">Modul yang paling sering dibuka peserta didik</p></div></div>
+    <mods :list="populer" @open="m => go('modul', m.id)"></mods>
+  </section>
+</div>
+</template>
+
+<!-- ============ BERITA (daftar) ============ -->
+<div v-if="route.name === 'berita' && !route.id" class="wrap" style="padding-top:26px">
+  <div v-if="loading && !berita.length" class="news"><div v-for="n in 3" :key="n" class="nc sk" style="height:260px"></div></div>
+  <div v-else-if="!berita.length" class="card" style="color:var(--mut);text-align:center">Belum ada berita.</div>
+  <div class="news"><article v-for="b in berita" :key="b.id" class="nc" @click="go('berita', b.id)">
+    <img v-if="b.gambar" :src="b.gambar" loading="lazy" alt=""><div class="b"><span class="chip">{{ b.kategori }}</span><h3>{{ b.judul }}</h3><p>{{ b.ringkas }}</p><small>📅 {{ b.tanggal }} • Baca selengkapnya →</small></div></article></div>
+</div>
+
+<!-- ============ BERITA (baca selengkapnya) ============ -->
+<div v-if="route.name === 'berita' && route.id" class="wrap" style="padding-top:26px"><div class="art-grid">
+  <article v-if="artikel && !artikel.notfound" class="card art"><span class="chip">{{ artikel.kategori }}</span><h1>{{ artikel.judul }}</h1>
+    <div class="meta">📅 {{ artikel.tanggal }} • ✍ {{ artikel.penulis }}</div>
+    <img v-if="artikel.gambar" :src="artikel.gambar" class="cover" alt=""><div class="body">{{ artikel.isi || artikel.ringkas }}</div>
+    <p v-if="artLoading" style="color:var(--mut);font-size:13px">Memuat teks lengkap…</p>
+    <div v-if="modulBerita.length" style="margin-top:22px"><h4 style="color:var(--g1);margin:0 0 10px">📚 Bacaan terkait</h4><mods :list="modulBerita" @open="m => go('modul', m.id)"></mods></div>
+    <div class="acts"><button class="pbtn sm" @click="copy(shareUrl)">🔗 Salin Tautan</button> <button class="pbtn sm" style="background:#64748b" @click="go('berita')">← Semua Berita</button> <button v-if="admin" class="pbtn sm" style="background:#b91c1c" @click="hapusBerita(artikel)">Hapus</button></div></article>
+  <div v-else-if="artikel && artikel.notfound" class="card">Berita tidak ditemukan atau sudah dihapus. <a style="color:var(--g3);cursor:pointer" @click="go('berita')">Lihat semua berita</a></div>
+  <div v-else class="card" style="color:var(--mut)">Memuat berita…</div>
+  <aside class="card"><h4 style="margin-top:0;color:var(--g1)">Berita Lainnya</h4>
+    <a class="rel" v-for="b in related" :key="b.id" @click="go('berita', b.id)"><img v-if="b.gambar" :src="b.gambar" loading="lazy" alt=""><span>{{ b.judul }}<small>{{ b.tanggal }}</small></span></a>
+    <p v-if="!related.length" style="color:var(--mut);font-size:13px;margin:0">Belum ada berita lain.</p></aside>
+</div></div>
+
+<!-- ============ PROFIL ============ -->
+<div v-if="route.name === 'profil'" class="wrap" style="padding-top:26px">
+  <div class="card"><h2 style="margin-top:0;color:var(--g1)">Profil Bimbingan dan Konseling MAN 2 Padang</h2>
+    <h4 style="color:var(--g2);margin-bottom:4px">Visi &amp; Misi</h4><p style="white-space:pre-line;font-size:14px;color:#4b5563">{{ profil.visiMisi || 'Menjadi unit bimbingan dan konseling yang prima dalam memfasilitasi perkembangan pribadi, sosial, belajar, dan karier peserta didik.' }}</p>
+        <h4 style="color:var(--g2);margin-bottom:4px">📍 Alamat Kantor</h4><p style="font-size:14px;color:#4b5563">{{ addr }}</p>
+    <h4 style="color:var(--g2);margin-bottom:8px">📱 Media Sosial BK</h4>
+    <a class="ig" href="https://www.instagram.com/bkmandupa/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>@bkmandupa</a></div>
+  <div class="card"><h3 style="margin-top:0;color:var(--g1)">Tim Guru BK / Konselor</h3>
+    <div class="g2"><div class="gur" v-for="g in guru" :key="g.id"><img :src="g.foto" alt=""><div><b>{{ g.nama }}</b><div style="font-size:12px;color:var(--mut)">{{ g.jabatan }}</div><a v-if="g.medsos" :href="g.medsos" target="_blank" rel="noopener" style="font-size:12px;color:var(--g3)">🔗 Kontak</a></div></div></div>
+    <p v-if="!guru.length" style="color:var(--mut);font-size:13px">Data guru BK belum ditambahkan.</p></div>
+</div>
+
+<!-- ============ MODUL ============ -->
+<div v-if="route.name === 'modul'" class="wrap" style="padding-top:26px">
+  <div class="card"><h2 style="margin:0 0 4px;color:var(--g1)">Modul Bacaan Digital &amp; Booklet Interaktif</h2><p class="sub">Klik sampul untuk membuka flipbook 3D.</p>
+    <div class="chips"><button v-for="c in cats" :key="c" :class="{on: cat === c}" @click="cat = c">{{ c }}</button></div>
+    <div class="chips"><button v-for="g in ['Semua', ...kelasL]" :key="g" :class="{on: kl === g}" @click="kl = g">{{ g === 'Semua' ? 'Semua Kelas' : 'Kelas ' + g }}</button></div>
+    <div class="fm" style="margin-bottom:18px"><input v-model="q" placeholder="Cari judul modul…"></div>
+    <div v-if="loading && !modul.length" class="mods"><div v-for="n in 6" :key="n" class="mc"><div class="cv sk"></div></div></div>
+    <div class="mods"><div class="mc" v-for="m in filtered" :key="m.id" @click="go('modul', m.id)" @mouseenter="prefetch(m)" @touchstart.passive="prefetch(m)">
+      <div class="cv"><img v-if="m.cover" :src="m.cover" loading="lazy" alt=""><span class="k">{{ m.kategori }}</span><button v-if="admin" class="x" title="Hapus" @click.stop="hapusModul(m)">🗑</button></div>
+      <h4>{{ m.judul }}</h4><small>{{ m.penulis }} • {{ m.n }} hal<template v-if="m.dibaca"> • 👁 {{ m.dibaca }}</template></small><small style="display:block;color:var(--g3);font-weight:700">🎓 {{ kelasLabel(m) }}</small></div></div>
+    <p v-if="!loading && !filtered.length" style="color:var(--mut);text-align:center">Tidak ada modul.</p></div>
+</div>
+
+<!-- ============ STUDI TRACER ============ -->
+<div v-if="route.name === 'tracer'" class="wrap" style="padding-top:26px">
+  <div class="chips"><button :class="{on: sub === 'a'}" @click="sub = 'a'">🔍 Penelusuran Alumni</button><button :class="{on: sub === 'b'}" @click="sub = 'b'">📊 Analisis Peluang Lolos</button></div>
+  <div v-if="sub === 'a'"><div class="card fm"><div class="g2">
+    <div><label>Kelas</label><select v-model="fk"><option value="">Semua kelas</option><option v-for="x in dd.kelasList">{{ x }}</option></select></div>
+    <div><label>Prodi</label><select v-model="fpr"><option value="">Semua prodi</option><option v-for="x in dd.prodiList">{{ x }}</option></select></div>
+    <div><label>PTN</label><select v-model="ft"><option value="">Semua PTN</option><option v-for="x in dd.ptnList">{{ x }}</option></select></div></div>
+    <p style="margin-top:14px"><button class="pbtn" @click="cari">Cari Data Historis</button> <small v-if="!admin" style="color:var(--mut)">Nama dan nilai rapor siswa hanya tampil untuk admin.</small></p></div>
+    <div class="card tw"><table><thead><tr><th v-if="admin">Nama</th><th>Kelas</th><th>PTN</th><th>Prodi</th><th>Tahun</th><th v-if="admin">Rata Rapor</th></tr></thead>
+      <tbody><tr v-if="busyT"><td colspan="6">⏳ Memuat…</td></tr><tr v-else-if="!hasil.length"><td colspan="6" style="text-align:center">{{ searched ? 'Tidak ada data.' : 'Pilih kriteria lalu klik Cari.' }}</td></tr>
+      <tr v-for="(r, i) in hasil" :key="i"><td v-if="admin">{{ r.nama }}</td><td>{{ r.kelas }}</td><td>{{ r.ptn }}</td><td>{{ r.prodi }}</td><td>{{ r.tahun }}</td><td v-if="admin">{{ r.rataRapor }}</td></tr></tbody></table></div></div>
+  <div v-else>
+    <div class="card fm">
+      <h3 style="margin:0;color:var(--g1)">Simulasi Peluang Lolos SNBP</h3>
+      <p class="sub" style="margin-bottom:0">Isi nilai rapor (wajib). Nilai TKA bersifat opsional, tetapi membuat analisis lebih akurat.</p>
+      <h4 class="sh">1. Nilai Rapor Mapel Wajib <span class="req">wajib</span></h4>
+      <div class="g2"><div><label>Bahasa Indonesia</label><input type="number" min="0" max="100" step="0.01" v-model="sim.r.ind"></div><div><label>Bahasa Inggris</label><input type="number" min="0" max="100" step="0.01" v-model="sim.r.ing"></div><div><label>Matematika (wajib)</label><input type="number" min="0" max="100" step="0.01" v-model="sim.r.mtk"></div></div>
+      <h4 class="sh">2. Nilai Rapor 2 Mapel Pendukung Prodi/PTN <span class="req">wajib</span></h4>
+      <div class="g2" v-for="(x, i) in sim.r.pen" :key="'rp' + i"><div><label>Mapel pendukung {{ i + 1 }}</label><select v-model="x.mapel"><option value="">Pilih mapel</option><option v-for="m in dd.mapelList" :key="m">{{ m }}</option></select></div><div><label>Nilai rapor</label><input type="number" min="0" max="100" step="0.01" v-model="x.nilai"></div></div>
+      <h4 class="sh">3. Nilai TKA Mapel Wajib <span class="opt">opsional</span></h4>
+      <div class="g2"><div><label>TKA Bahasa Indonesia</label><input type="number" min="0" max="100" step="0.01" v-model="sim.t.ind"></div><div><label>TKA Bahasa Inggris</label><input type="number" min="0" max="100" step="0.01" v-model="sim.t.ing"></div><div><label>TKA Matematika (wajib)</label><input type="number" min="0" max="100" step="0.01" v-model="sim.t.mtk"></div></div>
+      <h4 class="sh">4. Nilai TKA 2 Mapel Pilihan <span class="opt">opsional</span></h4>
+      <div class="g2" v-for="(x, i) in sim.t.pil" :key="'tp' + i"><div><label>Mapel pilihan {{ i + 1 }}</label><select v-model="x.mapel"><option value="">Pilih mapel</option><option v-for="m in dd.mapelList" :key="m">{{ m }}</option></select></div><div><label>Nilai TKA</label><input type="number" min="0" max="100" step="0.01" v-model="x.nilai"></div></div>
+      <h4 class="sh">Filter prodi <span class="opt">opsional</span></h4>
+      <div class="g2"><div><select v-model="sim.prodi"><option value="">Semua prodi</option><option v-for="x in dd.prodiList" :key="x">{{ x }}</option></select></div></div>
+      <p style="margin-top:16px"><button class="pbtn" :disabled="busyA" @click="analisis">{{ busyA ? 'Menganalisis…' : 'Analisis Rekomendasi Prodi & PTN' }}</button></p>
+    </div>
+
+    <template v-if="res">
+      <div class="card"><div class="g2">
+        <div class="stat2"><b>{{ res.ringkasan.rataRapor }}</b><span>Rata-rata rapor ({{ res.ringkasan.jumlahRapor }} nilai)</span></div>
+        <div class="stat2"><b>{{ res.ringkasan.skorTKA === null ? '-' : res.ringkasan.skorTKA }}</b><span>Skor zona TKA (1-4){{ res.ringkasan.skorTKA === null ? ' • belum diisi' : '' }}</span></div>
+        <div class="stat2"><b>{{ res.ringkasan.adj > 0 ? '+' : '' }}{{ res.ringkasan.adj }}</b><span>Pengaruh TKA pada indikator</span></div></div>
+        <div v-if="res.ringkasan.tka.length" class="tw" style="margin-top:16px"><table><thead><tr><th>Mapel TKA</th><th>Nilai</th><th>Rerata nasional</th><th>Selisih</th><th>Zona</th></tr></thead>
+          <tbody><tr v-for="(x, i) in res.ringkasan.tka" :key="i"><td>{{ x.mapel }}</td><td>{{ x.nilai }}</td><td>{{ x.rerata }}</td><td :style="{color: x.deviasi >= 0 ? '#16a34a' : '#dc2626'}">{{ x.deviasi > 0 ? '+' : '' }}{{ x.deviasi }}</td><td><span class="pill" :style="{background: zoneColor(x.skor)}">{{ x.zone }}</span></td></tr></tbody></table></div>
+      </div>
+      <div class="card tw"><table><thead><tr><th>PTN</th><th>Prodi</th><th>Alumni diterima</th><th>Rata rapor alumni</th><th>Selisih</th><th>Peluang</th></tr></thead>
+        <tbody><tr v-if="!res.rekomendasi.length"><td colspan="6" style="text-align:center">Tidak ada data alumni yang cocok.</td></tr>
+        <tr v-for="(r, i) in res.rekomendasi" :key="i"><td><b>{{ r.ptn }}</b></td><td>{{ r.prodi }}</td><td>{{ r.jumlahLulusan }}<small v-if="r.terbatas" style="color:#d97706"> • data terbatas</small></td><td>{{ r.rataAlumni }}</td><td>{{ r.selisih > 0 ? '+' : '' }}{{ r.selisih }}</td><td><span class="pill" :style="{background: r.warnaPeluang}">{{ r.peluang }}</span></td></tr></tbody></table>
+        <p style="font-size:12px;color:var(--mut);margin:12px 0 0">Indikator bantu berdasarkan data alumni MAN 2 Padang dan acuan zona TKA (Kepdit 102/2025). Ini bukan prediksi atau keputusan resmi SNBP.</p></div>
+      <div class="card" v-if="bacaanSnbp.length"><h3 style="margin-top:0;color:var(--g1)">📚 Bacaan yang disarankan</h3>
+        <p class="sub">{{ res.ringkasan.skorTKA !== null && res.ringkasan.skorTKA < 2.5 ? 'Untuk memperkuat strategi belajar dan persiapan karier.' : 'Untuk membantu merencanakan karier dan pilihan studi.' }}</p>
+        <mods :list="bacaanSnbp" @open="m => go('modul', m.id)"></mods></div>
+    </template>
+  </div>
+</div>
+
+<!-- ============ INSTRUMEN ============ -->
+<div v-if="route.name === 'instrumen'" class="wrap" style="padding-top:26px"><div class="card"><h2 style="margin-top:0;color:var(--g1)">Instrumen Bimbingan &amp; Konseling</h2>
+  <div class="g2"><div class="gur" style="display:block"><b>Angket Kebutuhan Peserta Didik (AKPD)</b><p><button class="pbtn sm" @click="say('Membuka AKPD…')">Buka Angket</button></p></div>
+  <div class="gur" style="display:block"><b>Inventori Tugas Perkembangan (ITP)</b><p><button class="pbtn sm" @click="say('Membuka ITP…')">Buka ITP</button></p></div></div></div></div>
+
+<!-- ============ KONSELING ============ -->
+<div v-if="route.name === 'konseling'" class="wrap" style="padding-top:26px"><div class="card fm" style="max-width:620px;margin:0 auto"><div style="display:flex;align-items:center;gap:12px;margin-bottom:6px"><img :src="logoK" alt="Logo Konselor" style="height:52px"><h2 style="margin:0;color:var(--g1)">Layanan Konseling &amp; Pelaporan</h2></div>
+  <label>Pilih layanan</label><select v-model="kons.jenis"><option>Jadwal Temu (Konseling Tatap Muka)</option><option>Konsultasi Karier</option><option>Laporan Masalah Pribadi</option></select>
+  <label>Nama lengkap</label><input v-model="kons.nama"><label>Kelas</label><input v-model="kons.kelas"><label>Kontak WhatsApp</label><input v-model="kons.kontak">
+  <label>Waktu / keterangan</label><input v-model="kons.waktuAtauKasus"><label>Pesan</label><textarea rows="4" v-model="kons.pesan"></textarea>
+  <p><button class="pbtn" :disabled="sending" @click="kirim">{{ sending ? 'Mengirim…' : 'Kirim Permintaan Konseling' }}</button></p></div>
+  <div class="card" v-if="bacaanKons.length" style="max-width:620px;margin:0 auto"><h3 style="margin-top:0;color:var(--g1)">📚 Bacaan untuk kamu</h3><p class="sub">Materi pengembangan diri dan hubungan sosial dari tim BK.</p>
+    <mods :list="bacaanKons" @open="m => go('modul', m.id)"></mods></div></div>
+
+<!-- ============ FOOTER ============ -->
+<footer class="foot"><div class="wrap">
+  <div><p style="display:flex;gap:10px;align-items:center;margin:0 0 10px"><img src="https://lh3.googleusercontent.com/d/1QzTqks3VPlvoNY9yoTajnvhrvhdnIDpC=w160" alt="Logo MAN 2 Padang" style="height:46px"><img :src="logoK" alt="Logo Konselor" style="height:46px"></p><h5>Portal BK MANDUPA</h5><p>Bimbingan dan Konseling<br>MAN 2 Kota Padang</p><p>📍 {{ addr }}</p></div>
+  <div><h5>Menu</h5><a v-for="t in tabs" :key="t[0]" @click="go(t[0])">{{ t[1] }}</a></div>
+   <div><h5>Jam Layanan</h5><p>Senin - Jumat<br>07.30 - 15.30 WIB</p><p>Identitas dan pesan konseling dijaga kerahasiaannya.</p>
+    <h5 style="margin-top:14px">Ikuti Kami</h5><a class="igf" href="https://www.instagram.com/bkmandupa/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>@bkmandupa</a></div>
+</div><div class="cp">© MAN 2 Kota Padang • Ikhlas Beramal</div></footer>
+
+<!-- ============ MODAL ============ -->
+
+
+<div v-if="loginOpen" class="modal" @click.self="loginOpen = false"><div class="mbox fm" style="max-width:360px"><h3 style="margin-top:0;color:var(--g1)">Login Administrator BK</h3>
+  <div style="position:relative">
+    <input :type="showPw ? 'text' : 'password'" v-model="pw" placeholder="Kata sandi admin" autocomplete="current-password" autocapitalize="off" autocorrect="off" spellcheck="false" style="padding-right:46px" @keyup.enter="login">
+    <button type="button" @click="showPw = !showPw" :title="showPw ? 'Sembunyikan' : 'Lihat password'" style="position:absolute;right:6px;top:50%;transform:translateY(-50%);background:none;font-size:18px;padding:4px 8px">{{ showPw ? '🙈' : '👁' }}</button>
+  </div>
+  <p style="text-align:right"><button type="button" class="pbtn sm" style="background:#64748b" @click="loginOpen = false">Batal</button> <button type="button" class="pbtn sm" :disabled="logging" @click="login">{{ logging ? 'Memeriksa…' : 'Masuk' }}</button></p></div></div>
+
+<!-- ============ PANEL ADMIN ============ -->
+<aside v-if="admin && panel" class="admin fm">
+  <p style="display:flex;justify-content:space-between;align-items:center;margin-top:0"><b style="color:#9ec5ff">🛠 PANEL ADMIN</b><button class="pbtn sm" style="background:#334155" @click="panel = false">✕ Tutup</button></p>
+  <p v-if="busy" style="color:#9ec5ff;font-weight:700">{{ busy }}</p>
+  <div class="box"><h4>1. Berita baru</h4><input v-model="fb.judul" placeholder="Judul"><select v-model="fb.kategori"><option>INFORMASI BK</option><option>PENGUMUMAN SNBP</option><option>KEGIATAN SISWA</option></select>
+    <input type="date" v-model="fb.tanggal"><input v-model="fb.penulis" placeholder="Penulis"><label>Foto (opsional)</label><input type="file" accept="image/*" @change="e => fb.file = e.target.files[0]">
+    <textarea rows="3" v-model="fb.isi" placeholder="Isi berita"></textarea>
+    <label>Bacaan terkait (opsional; tahan Ctrl untuk memilih lebih dari satu)</label><select multiple size="4" v-model="fb.modul"><option v-for="m in modul" :key="m.id" :value="m.id">{{ m.judul }}</option></select><p><button class="pbtn" :disabled="!!busy" @click="simpanBerita">Terbitkan Berita</button></p></div>
+  <div class="box"><h4>2. Profil &amp; guru BK</h4><textarea rows="3" v-model="fp.visiMisi" placeholder="Visi & misi"></textarea><input v-model="fp.alamat" placeholder="Alamat kantor BK">
+    <p><button class="pbtn sm" :disabled="!!busy" @click="simpanProfil">Simpan Profil</button></p><hr style="border-color:#27456f">
+    <input v-model="fg.nama" placeholder="Nama & gelar"><input v-model="fg.jabatan" placeholder="Jabatan"><input v-model="fg.medsos" placeholder="Link kontak / medsos"><label>Foto guru</label><input type="file" accept="image/*" @change="e => fg.file = e.target.files[0]">
+    <p><button class="pbtn sm" :disabled="!!busy" @click="simpanGuru">Tambah Guru</button></p></div>
+  <div class="box"><h4>3. Modul booklet (PDF, maks. 50 halaman)</h4><input v-model="fm.judul" placeholder="Judul modul"><select v-model="fm.kategori"><option v-for="c in cats.slice(1)">{{ c }}</option></select><input v-model="fm.penulis" placeholder="Penulis">
+    <label>Tingkat kelas (boleh lebih dari satu; kosong = semua)</label><div style="display:flex;gap:12px;margin-bottom:6px"><label v-for="g in kelasL" :key="g" style="display:flex;align-items:center;gap:5px;margin:0;text-transform:none;font-size:13px"><input type="checkbox" :value="g" v-model="fm.kelas" style="width:auto"> Kelas {{ g }}</label></div>
+    <label>Cover khusus (opsional)</label><input type="file" accept="image/*" @change="e => fm.cover = e.target.files[0]"><label>File PDF (maks. 30 MB)</label><input type="file" accept="application/pdf" @change="onPdf">
+    <p><button class="pbtn" :disabled="!!busy" @click="simpanModul">Terbitkan Modul</button></p></div>
+</aside>
+
+<div v-if="embed && !active" class="eload">Memuat booklet…</div>
+<div v-if="shareOpen" class="modal top" @click.self="shareOpen = false"><div class="mbox fm">
+  <h3 style="margin-top:0;color:var(--g1)">🔗 Bagikan Booklet</h3><p class="sub" style="margin-bottom:6px">{{ active ? active.judul : '' }}</p>
+  <label>Tautan langsung</label><div style="display:flex;gap:8px"><input readonly :value="shareUrl" @focus="$event.target.select()"><button class="pbtn sm" @click="copy(shareUrl)">Salin</button></div>
+  <label>Kode sematan (situs / presentasi)</label><textarea rows="4" readonly :value="embedCode" @focus="$event.target.select()"></textarea>
+  <p><button class="pbtn sm" @click="copy(embedCode)">Salin kode sematan</button> <button class="pbtn sm" style="background:#64748b" @click="shareOpen = false">Tutup</button></p>
+  <p class="sub" style="font-size:12px;margin:0">Tempel di Google Sites, Notion, Canva, atau situs sekolah. Setahu saya Google Slides tidak mendukung sematan halaman web; gunakan tautan langsung.</p></div></div>
+
+<!-- ============ VIEWER BOOKLET ============ -->
+<div v-if="active" ref="viewer" class="viewer">
+  <div class="vbar"><button v-if="!embed" @click="go('modul')">✕ Tutup</button><h3>{{ active.judul }}</h3>
+    <button @click="drawer = !drawer">Halaman</button><button @click="goCover">Sampul</button>
+    <span style="color:#94a3b8;font-family:monospace">{{ label }}</span>
+    <button @click="zoomBy(-0.25)" :disabled="zoom <= 0.5">−</button><span style="font-family:monospace;min-width:38px;text-align:center">{{ Math.round(zoom * 100) }}%</span><button @click="zoomBy(0.25)" :disabled="zoom >= 3">＋</button>
+    <button v-if="stageW >= 720" @click="viewMode = viewMode === 'spread' ? 'single' : 'spread'">{{ mode === 'spread' ? '2 Hal' : '1 Hal' }}</button>
+    <button @click="fullscreen">Layar Penuh</button><button v-if="!embed" @click="shareOpen = true">🔗 Bagikan</button><a v-else :href="portalUrl" target="_blank" rel="noopener" class="lnk">Portal ↗</a></div>
+  <div ref="stage" class="vstage" style="touch-action:none" @wheel="onWheel" @pointerdown="dragStart" @pointermove="dragMove" @pointerup="dragEnd" @pointerleave="dragEnd">
+    <button class="vnav l" :disabled="!canPrev || !!flip" @click="prevPage">‹</button>
+    <div class="vwrap" :style="wrapStyle"><div class="book" :style="bookStyle">
+      <div class="half" :style="{left: 0, width: PW + 'px', height: PH + 'px', visibility: leftHidden ? 'hidden' : 'visible'}" @click="halfClick('prev')"><pg :p="pageAt(leftIdx)" :n="leftIdx"></pg></div>
+      <div v-if="mode === 'spread'" class="half" :style="{left: PW + 'px', width: PW + 'px', height: PH + 'px'}" @click="halfClick('next')"><pg :p="pageAt(rightIdx)" :n="rightIdx"></pg></div>
+      <div v-if="mode === 'spread'" class="fold" :style="{left: PW + 'px', opacity: shifted ? 0 : 1, transition: 'opacity .9s'}"></div>
+      <div v-if="flip" class="leaf" :class="'leaf-' + flip.side" :style="{width: PW + 'px', height: PH + 'px', left: flip.side === 'right' ? PW + 'px' : 0, '--from': flip.from + 'deg', '--to': flip.to + 'deg'}" @animationend.self="finishFlip">
+        <div class="face"><pg :p="pageAt(flip.front)" :n="flip.front"></pg></div>
+        <div class="face bk"><pg v-if="flip.back !== null" :p="pageAt(flip.back)" :n="flip.back"></pg></div></div>
+    </div></div>
+    <button class="vnav r" :disabled="isLast || !!flip" @click="nextPage">›</button>
+    <div v-if="drawer" class="vdraw"><button v-for="(u, i) in pages" :key="i" :class="{on: i === currentPage || (mode === 'spread' && i === currentPage + 1)}" @click="goTo(i)"><img :src="thumb(u)" loading="lazy" alt=""><span>{{ i + 1 }}</span></button></div>
+    <div v-if="loadingPages" class="vload"><span>Memuat halaman booklet…</span></div>
+  </div>
+</div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+/* ====== ISI SATU KALI: alamat web app Apps Script (berakhiran /exec) ====== */
+const API = 'https://script.google.com/macros/s/AKfycbwm51rNWJqbz-o6v-ziDjDfdwyoYH3Yt7KyefIggI_yFnZWpw7vqm5iw1FFXZdsbxdy/exec';
+const gs = async (fn, ...args) => {
+  if (!/^https:\/\/script\.google\.com\//.test(API)) throw new Error('Alamat Apps Script belum diisi di index.html (konstanta API).');
+  const r = await fetch(API, { method: 'POST', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: JSON.stringify({ fn, args }) });
+  const j = await r.json();
+  if (!j.ok) throw new Error(j.error || 'Terjadi kesalahan.');
+  return j.data;
+};
+const loadPdf = () => window.pdfjsLib ? Promise.resolve() : new Promise((ok, no) => {
+  const s = document.createElement('script'); s.src = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js';
+  s.onload = () => { pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js'; ok(); };
+  s.onerror = () => no(new Error('Gagal memuat pdf.js')); document.head.appendChild(s);
+});
+const photoB64 = (file, w) => new Promise((ok, no) => {
+  const im = new Image(), u = URL.createObjectURL(file);
+  im.onload = () => { const k = Math.min(1, w / im.width), cv = document.createElement('canvas'); cv.width = Math.round(im.width * k); cv.height = Math.round(im.height * k);
+    const cx = cv.getContext('2d'); cx.fillStyle = '#fff'; cx.fillRect(0, 0, cv.width, cv.height); cx.drawImage(im, 0, 0, cv.width, cv.height); URL.revokeObjectURL(u); ok(cv.toDataURL('image/jpeg', 0.82).split(',')[1]); };
+  im.onerror = () => no(new Error('Gambar tidak terbaca')); im.src = u;
+});
+const Mods = { props: ['list'], emits: ['open'], template: `<div class="mods"><div class="mc" v-for="m in list" :key="m.id" @click="$emit('open', m)"><div class="cv"><img v-if="m.cover" :src="m.cover" loading="lazy" alt=""><span class="k">{{ m.kategori }}</span></div><h4>{{ m.judul }}</h4><small>{{ m.penulis }}<template v-if="m.dibaca"> • 👁 {{ m.dibaca }}</template></small></div></div>` };
+const Pg = { props: ['p', 'n'], template: `<div :class="p && p.cover ? 'pg cov' : 'pg'"><template v-if="p"><img :src="p.img" alt=""><span v-if="!p.cover && n !== undefined" class="pgn">{{ n + 1 }}</span><div v-if="p.cover" class="pgc"><small>BOOKLET DIGITAL • MAN 2 PADANG</small><b>{{ p.title }}</b></div></template></div>` };
+const LOGO_KONSELOR = 'https://lh3.googleusercontent.com/d/1DmVw-vlocrTm866BJRy3tp5bwJmS3k1t=w160';
+const today = () => new Date().toISOString().split('T')[0];
+
+Vue.createApp({
+  components: { Pg, Mods },
+  data() { return {
+    route: { name: 'beranda', id: '' }, scrolled: false, logoK: LOGO_KONSELOR, kelasL: ['X', 'XI', 'XII'], kl: 'Semua', embed: new URLSearchParams(location.search).get('embed') === '1', dataV: '', panX: 0, panY: 0, drag: null, dragging: false, moved: false, drawer: false, shareOpen: false, slideI: 0, hoverSlide: false, artikel: null, artLoading: false, artCache: {}, toast: '', loading: true, berita: [], profil: { visiMisi: '', alamat: '' }, guru: [], modul: [],
+    tabs: [['beranda', '🏠 Beranda'], ['berita', '📰 Berita'], ['profil', '🏫 Profil'], ['modul', '📚 Modul'], ['tracer', '📈 Studi Tracer & SNBP'], ['instrumen', '📋 Instrumen BK'], ['konseling', '💬 Layanan Konseling']],
+    tiles: [['berita', 'Berita & Kegiatan', '📰'], ['modul', 'Modul', '📚'], ['tracer', 'Studi Tracer & SNBP', '📈'], ['instrumen', 'Instrumen BK', '📋'], ['konseling', 'Layanan Konseling', '💬'], ['profil', 'Profil & Tim BK', '🏫']],
+    cats: ['Semua', 'SELF IMPROVEMENT', 'SOCIAL IMPROVEMENT', 'LEARNING IMPROVEMENT', 'CAREER IMPROVEMENT'], cat: 'Semua', q: '', detail: null,
+    token: '', admin: false, loginOpen: false, pw: '', showPw: false, logging: false, panel: false, busy: '',
+    fb: { judul: '', kategori: 'INFORMASI BK', tanggal: today(), penulis: 'Tim BK MAN 2 Padang', isi: '', file: null, modul: [] },
+    fp: { visiMisi: '', alamat: '' }, fg: { nama: '', jabatan: '', medsos: '', file: null },
+    fm: { judul: '', kategori: 'SELF IMPROVEMENT', penulis: 'Tim BK MAN 2 Padang', cover: null, pdf: null, kelas: [] },
+    sub: 'a', dd: { kelasList: [], prodiList: [], ptnList: [], mapelList: [] }, fk: '', fpr: '', ft: '', hasil: [], busyT: false, searched: false,
+    sim: { r: { ind: '', ing: '', mtk: '', pen: [{ mapel: '', nilai: '' }, { mapel: '', nilai: '' }] }, t: { ind: '', ing: '', mtk: '', pil: [{ mapel: '', nilai: '' }, { mapel: '', nilai: '' }] }, prodi: '' }, res: null, busyA: false,
+    kons: { jenis: 'Jadwal Temu (Konseling Tatap Muka)', nama: '', kelas: '', kontak: '', waktuAtauKasus: '', pesan: '' }, sending: false,
+    active: null, pages: [], loadingPages: false, currentPage: 0, viewMode: 'spread', closed: true, flip: null, zoom: 1, stageW: 0, fitScale: 1, PW: 400, PH: 566
+    
+  }; },
+  computed: {
+        menu() { return this.tabs.filter(t => t[0] !== 'beranda').map(t => [t[0], t[1].replace(/^\S+\s/, '')]); },
+    modulBerita() { return ((this.artikel && this.artikel.modul) || []).map(id => this.modul.find(m => m.id === id)).filter(Boolean); },
+    populer() { return this.modul.filter(m => m.dibaca > 0).slice().sort((a, b) => b.dibaca - a.dibaca).slice(0, 4); },
+    bacaanSnbp() { const low = this.res && this.res.ringkasan.skorTKA !== null && this.res.ringkasan.skorTKA < 2.5, by = k => this.modul.filter(m => m.kategori === k); return [...by('CAREER IMPROVEMENT'), ...(low ? by('LEARNING IMPROVEMENT') : [])].slice(0, 4); },
+    bacaanKons() { return this.modul.filter(m => m.kategori === 'SELF IMPROVEMENT' || m.kategori === 'SOCIAL IMPROVEMENT').slice(0, 4); },
+    portalUrl() { return location.origin + '/modul/' + this.route.id; },
+    embedCode() { return `<iframe src="${this.shareUrl}?embed=1" width="100%" height="560" style="border:0;border-radius:12px" allow="fullscreen" allowfullscreen loading="lazy" title="${String(this.active ? this.active.judul : 'Booklet').replace(/"/g, '&quot;')}"></iframe>`; },
+    slides() { return this.berita.slice(0, 5); },
+    related() { return this.berita.filter(b => b.id !== this.route.id).slice(0, 5); },
+    pageInfo() { return ({ berita: ['Berita & Kegiatan BK', 'Informasi terbaru dari tim Bimbingan dan Konseling'], profil: ['Profil BK', 'Visi, misi, alamat, dan tim guru BK MAN 2 Kota Padang'], modul: ['Modul & Bacaan', 'Booklet digital interaktif untuk peserta didik'], tracer: ['Studi Tracer & SNBP', 'Penelusuran alumni dan analisis peluang lolos SNBP'], instrumen: ['Instrumen BK', 'Angket dan inventori bimbingan konseling'], konseling: ['Layanan Konseling', 'Jadwal temu, konsultasi karier, dan pelaporan masalah'] })[this.route.name] || ['', '']; },
+    shareUrl() { return location.origin + (this.route.name === 'beranda' ? '/' : '/' + this.route.name + (this.route.id ? '/' + this.route.id : '')); },
+    addr() { return this.profil.alamat || 'Jl. Gajah Mada No. 10, Kp. Olo, Kec. Nanggalo, Kota Padang, Sumatera Barat 25143'; },
+    filtered() { const q = this.q.toLowerCase().trim(); return this.modul.filter(m => (this.cat === 'Semua' || m.kategori === this.cat) && (this.kl === 'Semua' || !m.kelas || !m.kelas.length || m.kelas.includes(this.kl)) && (!q || m.judul.toLowerCase().includes(q))); },
+    mode() { return this.viewMode === 'spread' && this.stageW >= 720 ? 'spread' : 'single'; },
+    bookW() { return this.mode === 'spread' ? this.PW * 2 : this.PW; },
+    shifted() { return this.mode === 'spread' && (this.flip ? this.flip.kind === 'close' : this.closed); },
+    leftHidden() { return this.mode === 'spread' && (this.flip ? this.flip.kind !== 'turn' : this.closed); },
+    leftIdx() { return this.flip ? this.flip.sL : this.currentPage; },
+    rightIdx() { return this.flip ? this.flip.sR : (this.mode === 'spread' && this.closed ? -1 : this.currentPage + 1); },
+    canPrev() { return this.currentPage > 0 || (this.mode === 'spread' && !this.closed); },
+    isLast() { if (!this.pages.length) return true; if (this.mode === 'spread' && this.closed) return false; return this.currentPage >= this.pages.length - (this.mode === 'spread' ? 2 : 1); },
+    label() { const n = this.active ? (this.pages.length || this.active.n) : 0; return this.mode === 'spread' && this.closed ? 'Sampul' : (this.mode === 'spread' && this.currentPage + 2 <= n ? `${this.currentPage + 1}-${this.currentPage + 2}` : this.currentPage + 1) + ' / ' + n; },
+    wrapStyle() { return { width: this.bookW + 'px', height: this.PH + 'px', transform: `translate(calc(-50% + ${this.panX}px), calc(-50% + ${this.panY}px)) scale(${this.fitScale * this.zoom})`, transition: this.dragging ? 'none' : 'transform .25s ease' }; },
+    bookStyle() { return { width: this.bookW + 'px', height: this.PH + 'px', transform: `translateX(${this.shifted ? -this.PW / 2 : 0}px)`, transition: 'transform .9s cubic-bezier(.5,.05,.25,1)' }; }
+  },
+  mounted() {
+    const bt0 = document.getElementById('boot'); if (bt0) bt0.remove();
+    window.addEventListener('scroll', () => { this.scrolled = window.scrollY > 40; }, { passive: true }); window.addEventListener('keydown', this.onKey); window.addEventListener('resize', this.updateFit); window.addEventListener('popstate', () => this.fromPath());
+    if (this.embed) document.body.classList.add('embed'); this.fromPath();
+    setInterval(() => { if (this.route.name === 'beranda' && !this.hoverSlide && this.slides.length > 1) this.slideI = (this.slideI + 1) % this.slides.length; }, 6000);
+    try { this.token = localStorage.getItem('bkToken') || ''; this.admin = !!this.token; const c = JSON.parse(localStorage.getItem('bkInit') || 'null'); if (c) { this.apply(c); this.dataV = localStorage.getItem('bkInitV') || ''; } } catch (e) {}
+    if (this.berita.length || this.modul.length) this.loading = false;              // dari cache browser: langsung tampil
+    fetch('/data.json').then(r => r.ok ? r.json() : null).then(d => { if (d && d.v && d.v !== this.dataV) this.applyData(d); }).catch(() => {})   // data siap saji dari Netlify
+      .then(() => { if (this.berita.length || this.modul.length) this.loading = false; return gs('getInit', this.dataV); })                     // cek pembaruan ke Apps Script
+      .then(d => { if (d && !d.unchanged) this.applyData(d); })
+      .catch(e => { if (!this.berita.length && !this.modul.length) this.say('Gagal memuat data: ' + e.message); })
+      .finally(() => { this.loading = false; });
+  },
+  methods: {
+    say(m) { this.toast = m; clearTimeout(this._t); this._t = setTimeout(() => this.toast = '', 5000); },
+    fail(e) { if (/Sesi berakhir/.test(e.message)) { this.logout(); this.loginOpen = true; } this.say(e.message); },
+    apply(d) { this.berita = d.berita || []; this.profil = d.profil || this.profil; this.fp = { ...this.profil }; this.guru = d.guru || []; this.modul = d.modul || []; this.syncModul(); },
+    applyData(d) { this.apply(d); this.dataV = d.v || ''; try { localStorage.setItem('bkInit', JSON.stringify(d)); localStorage.setItem('bkInitV', this.dataV); } catch (e) {} },
+    reload() { return gs('getInit').then(d => this.applyData(d)); },
+    go(name, id) {
+      const path = (name === 'beranda' ? '/' : '/' + name + (id ? '/' + id : '')) + (this.embed ? '?embed=1' : '');
+      if (location.pathname + location.search !== path) history.pushState({}, '', path);       // alamat sungguhan, mis. /berita/123
+      this.setRoute(name, id || '');
+    },
+    fromPath() { const m = location.pathname.match(/^\/([a-z]+)(?:\/([A-Za-z0-9_-]+))?\/?$/); this.setRoute(m ? m[1] : 'beranda', m && m[2] ? m[2] : ''); },
+    setRoute(name, id) {
+      if (!this.tabs.some(t => t[0] === name)) name = 'beranda';
+      this.route = { name, id: id || '' };
+      const t = this.tabs.find(x => x[0] === name); document.title = (name === 'beranda' ? '' : t[1].replace(/^\S+\s/, '') + ' - ') + 'Portal BK MANDUPA';
+      window.scrollTo(0, 0);
+      if (name === 'tracer' && !this.dd.mapelList.length) gs('getDropdownData').then(d => this.dd = d).catch(this.fail);
+      if (name === 'berita' && this.route.id) this.loadArtikel(this.route.id); else this.artikel = null;
+      this.syncModul();
+    },
+    syncModul() {
+      const r = this.route;
+      if (r.name === 'modul' && r.id) { const m = this.modul.find(x => x.id === r.id); if (m && (!this.active || this.active.id !== m.id)) this.openBooklet(m); }
+      else if (this.active) this.closeBooklet();
+    },
+    async loadArtikel(id) {
+      if (this.artCache[id]) { this.artikel = this.artCache[id]; return; }
+      const pre = this.berita.find(b => b.id === id); this.artikel = pre ? { ...pre } : null; this.artLoading = true;
+      try { const a = await gs('getBeritaDetail', id); this.artCache[id] = a; if (this.route.name === 'berita' && this.route.id === id) this.artikel = a; }
+      catch (e) { if (!pre && this.route.id === id) this.artikel = { notfound: true }; }
+      this.artLoading = false;
+    },
+    copy(text) {
+      const done = () => this.say('Tautan disalin.');
+      const fb = () => { const t = document.createElement('textarea'); t.value = text; t.style.cssText = 'position:fixed;opacity:0'; document.body.appendChild(t); t.select(); try { document.execCommand('copy'); done(); } catch (e) { this.say(text); } t.remove(); };
+      if (navigator.clipboard) navigator.clipboard.writeText(text).then(done).catch(fb); else fb();
+    },
+
+    /* ---- admin ---- */
+   async login() {
+  if (this.logging) return;
+  const pw = String(this.pw || '').trim();
+  if (!pw) return this.say('Isi kata sandi dulu.');
+  this.logging = true; this.say('Memeriksa kata sandi…');
+  try {
+    this.token = await gs('adminLogin', pw);
+    this.admin = true; this.loginOpen = false; this.pw = ''; this.panel = true;
+    try { localStorage.setItem('bkToken', this.token); } catch (e) {}
+    this.say('Berhasil masuk.');
+  } catch (e) { this.say(e.message); }
+  this.logging = false;
+},
+    logout() { this.token = ''; this.admin = false; this.panel = false; try { localStorage.removeItem('bkToken'); } catch (e) {} },
+    async run(label, fn) { this.busy = label; try { const r = await fn(); await this.reload(); if (r && r.message) this.say(r.message); return true; } catch (e) { this.fail(e); return false; } finally { this.busy = ''; } },
+    simpanBerita() {
+      const f = this.fb; if (!f.judul.trim()) return this.say('Judul wajib diisi.');
+      this.run('Menerbitkan berita…', async () => { let fid = ''; if (f.file) fid = await gs('uploadImage', this.token, 'berita', 'n' + Date.now() + '.jpg', await photoB64(f.file, 1000));
+        const r = await gs('tambahBeritaBackend', this.token, { judul: f.judul, kategori: f.kategori, tanggal: f.tanggal, penulis: f.penulis, isi: f.isi, gambarFid: fid, modulIds: [...f.modul] }); this.fb = { judul: '', kategori: 'INFORMASI BK', tanggal: today(), penulis: 'Tim BK MAN 2 Padang', isi: '', file: null, modul: [] }; return r; });
+    },
+    simpanProfil() { this.run('Menyimpan profil…', () => gs('updateProfilBackend', this.token, { ...this.fp })); },
+    simpanGuru() {
+      const f = this.fg; if (!f.nama.trim()) return this.say('Nama wajib diisi.');
+      this.run('Menyimpan guru…', async () => { let fid = ''; if (f.file) fid = await gs('uploadImage', this.token, 'guru', 'g' + Date.now() + '.jpg', await photoB64(f.file, 300));
+        const r = await gs('tambahGuruBackend', this.token, { nama: f.nama, jabatan: f.jabatan, medsos: f.medsos, fotoFid: fid }); this.fg = { nama: '', jabatan: '', medsos: '', file: null }; return r; });
+    },
+    onPdf(e) { const f = e.target.files[0]; if (!f) return; if (f.size > 30 * 1048576) { e.target.value = ''; return this.say('PDF melebihi 30 MB.'); } this.fm.pdf = f; },
+    simpanModul() {
+      const f = this.fm; if (!f.judul.trim() || !f.pdf) return this.say('Isi judul dan pilih file PDF.');
+      const id = 'm' + Date.now().toString(36) + Math.random().toString(36).slice(2, 6);
+      this.run('Memuat pdf.js…', async () => {
+        await loadPdf(); const pdf = await pdfjsLib.getDocument({ data: await f.pdf.arrayBuffer() }).promise;
+        if (pdf.numPages > 50) throw new Error(`PDF berisi ${pdf.numPages} halaman, maksimal 50.`);
+        const fids = [];
+        for (let i = 1; i <= pdf.numPages; i++) {
+          this.busy = `Mengonversi & mengunggah halaman ${i}/${pdf.numPages}…`;
+          const pg = await pdf.getPage(i), b = pg.getViewport({ scale: 1 }), vp = pg.getViewport({ scale: Math.min(900 / b.width, 1300 / b.height) });
+          const cv = document.createElement('canvas'); cv.width = Math.round(vp.width); cv.height = Math.round(vp.height);
+          const cx = cv.getContext('2d'); cx.fillStyle = '#fff'; cx.fillRect(0, 0, cv.width, cv.height); await pg.render({ canvasContext: cx, viewport: vp }).promise;
+          fids.push(await gs('uploadImage', this.token, id, `p${i}.jpg`, cv.toDataURL('image/jpeg', 0.8).split(',')[1])); cv.width = cv.height = 0;
+        }
+        let cover = fids[0]; if (f.cover) cover = await gs('uploadImage', this.token, id, 'cover.jpg', await photoB64(f.cover, 800));
+        const r = await gs('tambahModulBackend', this.token, { id, judul: f.judul, kategori: f.kategori, penulis: f.penulis, coverFid: cover, pages: fids, kelas: [...f.kelas] });
+        this.fm = { judul: '', kategori: 'SELF IMPROVEMENT', penulis: 'Tim BK MAN 2 Padang', cover: null, pdf: null, kelas: [] }; return r;
+      });
+    },
+    hapusModul(m) { if (confirm(`Hapus modul "${m.judul}"?`)) this.run('Menghapus…', () => gs('hapusModulBackend', this.token, m.id)); },
+    hapusBerita(b) { if (confirm('Hapus berita ini?')) { this.go('berita'); this.run('Menghapus…', () => gs('hapusBeritaBackend', this.token, b.id)); } },
+
+    /* ---- tracer / konseling ---- */
+    cari() { this.busyT = true; gs('getDataSNBP', this.fk, this.fpr, this.ft, this.token).then(r => { this.hasil = r || []; this.searched = true; }).catch(this.fail).finally(() => this.busyT = false); },
+    zoneColor(s) { return ['#94a3b8', '#dc2626', '#d97706', '#2563eb', '#16a34a'][s] || '#94a3b8'; },
+    analisis() {
+      const s = this.sim, v = x => { x = parseFloat(x); return !isNaN(x) && x > 0 && x <= 100; };
+      if (![s.r.ind, s.r.ing, s.r.mtk, s.r.pen[0].nilai, s.r.pen[1].nilai].every(v)) return this.say('Isi 5 nilai rapor (3 mapel wajib + 2 mapel pendukung) dengan angka 1-100.');
+      if (s.t.pil.some(x => x.nilai !== '' && !x.mapel)) return this.say('Pilih nama mapel untuk nilai TKA pilihan yang diisi.');
+      const payload = { prodiFilter: s.prodi,
+        rapor: { indonesia: s.r.ind, inggris: s.r.ing, matematika: s.r.mtk, pendukung: s.r.pen.map(x => ({ mapel: x.mapel, nilai: x.nilai })) },
+        tka: { indonesia: s.t.ind, inggris: s.t.ing, matematika: s.t.mtk, pilihan: s.t.pil.map(x => ({ mapel: x.mapel, nilai: x.nilai })) } };
+      this.busyA = true; gs('hitungPeluangProdi', JSON.parse(JSON.stringify(payload))).then(r => { this.res = r; }).catch(this.fail).finally(() => this.busyA = false);
+    },
+    kirim() { this.sending = true; gs('submitKonselingBackend', { ...this.kons }).then(r => { this.say(r.message); this.kons = { ...this.kons, nama: '', kelas: '', kontak: '', waktuAtauKasus: '', pesan: '' }; }).catch(e => this.say(e.message)).finally(() => this.sending = false); },
+
+    /* ---- viewer ---- */
+    pageAt(i) { if (i === -1) return this.active ? { cover: true, img: this.active.coverBig || this.active.cover, title: this.active.judul } : null; const u = this.pages[i]; return u ? { img: u } : null; },
+    openBooklet(m) {
+      let seen = false; try { seen = !!sessionStorage.getItem('rd_' + m.id); if (!seen) sessionStorage.setItem('rd_' + m.id, '1'); } catch (e) { this._rd = this._rd || {}; seen = !!this._rd[m.id]; this._rd[m.id] = 1; }
+      if (!seen) { m.dibaca = (m.dibaca || 0) + 1; gs('catatBaca', m.id).catch(() => {}); }
+      this.panX = 0; this.panY = 0; this.drawer = false; this.active = m; this.pages = []; this.currentPage = 0; this.closed = true; this.flip = null; this.zoom = 1; this.loadingPages = true;
+      this.$nextTick(() => { if (this.ro) this.ro.disconnect(); this.ro = new ResizeObserver(() => this.updateFit()); this.ro.observe(this.$refs.stage); this.updateFit(); });
+      this.fetchPages(m).then(u => { this.pages = u; u.slice(0, 6).forEach(s => { new Image().src = s; }); }).catch(e => this.say(e.message)).finally(() => this.loadingPages = false);
+    },
+    closeBooklet() { if (this.ro) this.ro.disconnect(); clearTimeout(this._ft); this.flip = null; this.active = null; try { if (document.fullscreenElement) document.exitFullscreen(); } catch (e) {} },
+    updateFit() { const s = this.$refs.stage; if (!s) return; this.stageW = s.clientWidth; this.fitScale = Math.max(0.25, Math.min((s.clientWidth - (this.stageW < 720 ? 16 : 110)) / this.bookW, (s.clientHeight - 10) / this.PH)); },
+    kelasLabel(m) { return m.kelas && m.kelas.length ? 'Kelas ' + m.kelas.join(', ') : 'Semua kelas'; },
+    imgW() { return window.innerWidth < 700 ? 700 : ((window.devicePixelRatio || 1) > 1.5 ? 1400 : 1000); },
+    thumb(u) { return u.replace(/=w\d+$/, '') + '=w160'; },
+    fetchPages(m) {
+      this._pc = this._pc || {}; this._pend = this._pend || {};
+      if (this._pc[m.id]) return Promise.resolve(this._pc[m.id]);
+      return this._pend[m.id] || (this._pend[m.id] = gs('getPagesModul', m.id).then(u => {
+        const w = this.imgW(); const a = u.map(x => x + (x.indexOf('lh3.googleusercontent.com') > -1 && !/=w\d+$/.test(x) ? '=w' + w : ''));
+        this._pc[m.id] = a; delete this._pend[m.id]; return a;
+      }).catch(e => { delete this._pend[m.id]; throw e; }));
+    },
+    prefetch(m) { if (!(this._pc && this._pc[m.id]) && !(this._pend && this._pend[m.id])) this.fetchPages(m).catch(() => {}); },
+    zoomBy(d) { this.zoom = Math.min(3, Math.max(0.5, Math.round((this.zoom + d) * 100) / 100)); if (this.zoom <= 1) { this.panX = 0; this.panY = 0; } this.clampPan(); },
+    clampPan() {
+      const s = this.$refs.stage; if (!s) return; const k = this.fitScale * this.zoom, ext = (a, b) => a > b ? (a - b) / 2 + 60 : 0;
+      const mx = ext(this.bookW * k, s.clientWidth), my = ext(this.PH * k, s.clientHeight);
+      this.panX = Math.max(-mx, Math.min(mx, this.panX)); this.panY = Math.max(-my, Math.min(my, this.panY));
+    },
+    onWheel(e) {
+      if (e.ctrlKey || e.metaKey) { e.preventDefault(); this.zoomBy(e.deltaY < 0 ? 0.1 : -0.1); }
+      else if (this.zoom > 1) { e.preventDefault(); this.panX -= e.deltaX; this.panY -= e.deltaY; this.clampPan(); }
+    },
+    dragStart(e) { if (this.zoom <= 1 || e.target.closest('.vnav,.vdraw')) return; this.drag = { x: e.clientX, y: e.clientY, px: this.panX, py: this.panY }; this.moved = false; },
+    dragMove(e) {
+      if (!this.drag) return; const dx = e.clientX - this.drag.x, dy = e.clientY - this.drag.y;
+      if (!this.dragging && Math.abs(dx) + Math.abs(dy) < 5) return;
+      this.dragging = true; this.moved = true; this.panX = this.drag.px + dx; this.panY = this.drag.py + dy; this.clampPan();
+    },
+    dragEnd() { this.drag = null; this.dragging = false; },
+    halfClick(d) { if (this.moved) { this.moved = false; return; } d === 'next' ? this.nextPage() : this.prevPage(); },
+    goTo(i) { if (this.flip) return; this.drawer = false; this.closed = false; this.currentPage = this.mode === 'spread' ? i - (i % 2) : i; this.pages.slice(this.currentPage, this.currentPage + 6).forEach(s => { new Image().src = s; }); },
+    goCover() { if (this.flip) return; this.drawer = false; this.currentPage = 0; this.closed = this.mode === 'spread'; },
+    startFlip(dir) {
+      if (this.flip || this.loadingPages || !this.pages.length) return;
+      const n = this.pages.length, c = this.currentPage, sp = this.mode === 'spread', step = sp ? 2 : 1;
+      if (sp && ((dir === 'next' && this.closed) || (dir === 'prev' && c === 0))) {
+        if (dir === 'prev' && this.closed) return;
+        this.flip = dir === 'next' ? { kind: 'open', side: 'right', from: 0, to: -180, front: -1, back: 0, sL: 0, sR: 1, target: 0 } : { kind: 'close', side: 'left', from: 0, to: 180, front: 0, back: -1, sL: 0, sR: 1, target: 0 };
+      } else {
+        const t = dir === 'next' ? Math.min(n - 1, c + step) : Math.max(0, c - step); if (t === c) return;
+        const f = sp ? (dir === 'next' ? { side: 'right', from: 0, to: -180, front: c + 1, back: t, sL: c, sR: t + 1 } : { side: 'left', from: 0, to: 180, front: c, back: t + 1, sL: t, sR: c + 1 })
+                     : (dir === 'next' ? { side: 'full', from: 0, to: -180, front: c, back: null, sL: t } : { side: 'full', from: -180, to: 0, front: t, back: null, sL: c });
+        f.kind = 'turn'; f.target = t; this.flip = f;
+      }
+      this._ft = setTimeout(() => this.finishFlip(), 1200);
+    },
+    finishFlip() { if (!this.flip) return; clearTimeout(this._ft); const k = this.flip.kind; this.currentPage = this.flip.target; this.flip = null; this.closed = k === 'close'; this.pages.slice(this.currentPage, this.currentPage + 6).forEach(s => { new Image().src = s; }); },
+    nextPage() { if (!this.isLast) this.startFlip('next'); }, prevPage() { if (this.canPrev) this.startFlip('prev'); },
+    fullscreen() {
+      const el = this.$refs.viewer, on = document.fullscreenElement || document.webkitFullscreenElement;
+      try { if (!on) { const rq = el.requestFullscreen || el.webkitRequestFullscreen; if (!rq) throw 0; const r = rq.call(el); if (r && r.catch) r.catch(() => this.say('Layar penuh diblokir browser.')); } else (document.exitFullscreen || document.webkitExitFullscreen).call(document); }
+      catch (e) { this.say('Layar penuh tidak tersedia di browser ini.'); }
+    },
+    onKey(e) { if (!this.active || /^(INPUT|TEXTAREA|SELECT)$/.test(e.target.tagName)) return; if (e.key === 'ArrowRight') this.nextPage(); if (e.key === 'ArrowLeft') this.prevPage(); if (e.key === 'Escape' && !this.embed) this.go('modul'); if (e.key === '+' || e.key === '=') this.zoomBy(0.25); if (e.key === '-') this.zoomBy(-0.25); if (e.key === '0') { this.zoom = 1; this.panX = 0; this.panY = 0; } if (e.key === 'f' || e.key === 'F') this.fullscreen(); }
+  }
+}).mount('#app');
+});
+</script>
+</body>
+</html>
